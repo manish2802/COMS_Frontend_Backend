@@ -1,0 +1,15 @@
+// filepath: D:\My_GitRepository_WorkSpace\COMS_Frontend_Backend\.gitignore
+# Dependencies
+/node_modules
+
+# Build output
+/dist
+/www
+
+# IDE config
+.vscode/
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
