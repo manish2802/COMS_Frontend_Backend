@@ -1,0 +1,47 @@
+<div class="container">
+  <h1>{{ pageTitle }}</h1>
+  <form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+    <div formGroupName="customer">
+      <div class="form-grid">
+        <div>
+          <label for="firstName">First Name</label>
+          <input id="firstName" formControlName="firstName" />
+        </div>
+        <div>
+          <label for="lastName">Last Name</label>
+          <input id="lastName" formControlName="lastName" />
+        </div>
+        <div>
+          <label for="emailId">Email</label>
+          <input id="emailId" type="email" formControlName="emailId" />
+        </div>
+        <div>
+          <label for="phoneNo">Phone</label>
+          <input id="phoneNo" formControlName="phoneNo" />
+        </div>
+        <!-- Address Fields as direct grid items -->
+        <div class="form-field-group" formGroupName="address">
+          <label for="city">City</label>
+          <input id="city" formControlName="city" />
+        </div>
+        <div class="form-field-group" formGroupName="address">
+          <label for="state">State</label>
+          <input id="state" formControlName="state" />
+        </div>
+        <div class="form-field-group" formGroupName="address">
+          <label for="area">Area</label>
+          <input id="area" formControlName="area" />
+        </div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button type="submit" [disabled]="customerForm.invalid || submitting">{{ isEditMode ? 'Update Customer' : 'Add Customer' }}</button>
+      <button type="button" (click)="onReset()">Reset</button>
+    </div>
+
+    <div *ngIf="statusMessage" [ngClass]="statusType === 'success' ? 'notice success' : 'notice error'" aria-live="polite">
+      {{ statusMessage }}
+    </div>
+  </form>
+</div>

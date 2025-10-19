@@ -1,0 +1,112 @@
+.app-header {
+  background-color: #3f51b5; /* Indigo */
+  color: white;
+  padding: 0 2rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  height: 64px;
+  display: flex;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active-link {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Style for the parent of an active link */
+.active-link-parent > a {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Dropdown styles */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #212529; /* Dark background */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  padding: 0.5rem 0;
+  min-width: 180px;
+  z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu a {
+  color: #dee2e6; /* Light text for dark background */
+  padding: 0.75rem 1.25rem;
+  display: block;
+  white-space: nowrap;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu a.active-link {
+  background-color: #495057; /* Darker hover state */
+  color: #fff;
+  border-radius: 0; /* Override border-radius for dropdown items */
+}
+
+.dropdown-divider {
+  height: 1px;
+  margin: 0.5rem 0;
+  background-color: #495057; /* Darker divider */
+}
+
+.dropdown-header {
+  color: #adb5bd; /* Muted header text */
+  padding: 0.75rem 1.25rem;
+  display: block;
+  white-space: nowrap;
+  font-size: 0.875rem;
+}
+
+.dropdown-item-text {
+  color: #6c757d; /* A muted text color */
+  padding: 0.75rem 1.25rem;
+  display: block;
+  white-space: nowrap;
+  font-style: italic;
+}

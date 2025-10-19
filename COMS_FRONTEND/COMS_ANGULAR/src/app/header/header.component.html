@@ -1,0 +1,36 @@
+<header class="app-header">
+  <nav>
+    <ul>
+      <li>
+        <a routerLink="/dashboard"
+           routerLinkActive="active-link"
+           [routerLinkActiveOptions]="{ exact: true }">
+          Dashboard
+        </a>
+      </li>
+      <li class="dropdown" routerLinkActive="active-link-parent">
+        <a class="dropdown-toggle">Customer</a>
+        <div class="dropdown-menu">
+          <a routerLink="/add-customer" routerLinkActive="active-link">
+            Add New Customer
+          </a>
+          <a routerLink="/find-customer" fragment="customer-search" routerLinkActive="active-link">
+             Find Customer
+          </a>
+        </div>
+      </li>
+      <li class="dropdown" routerLinkActive="active-link-parent">
+        <a class="dropdown-toggle">Card Services</a>
+        <div class="dropdown-menu">
+          <a routerLink="/find-customer" fragment="card-search" routerLinkActive="active-link">Search by Card</a>
+        </div>
+      </li>
+      <li class="dropdown" routerLinkActive="active-link-parent">
+        <a class="dropdown-toggle">Loan Services</a>
+        <div class="dropdown-menu">
+          <a routerLink="/find-customer" fragment="loan-search" routerLinkActive="active-link">Search by Loan</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</header>

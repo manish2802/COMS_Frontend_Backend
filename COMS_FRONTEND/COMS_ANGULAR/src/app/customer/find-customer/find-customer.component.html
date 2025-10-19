@@ -1,0 +1,73 @@
+<div class="find-customer-container">
+  <h2>Find Customer</h2>
+
+  <!-- Customer Details Search Section -->
+  <div id="customer-search" class="search-section">
+    <h3>By Customer Details</h3>
+    <form [formGroup]="customerSearchForm" (ngSubmit)="onCustomerSearch()">
+      <div class="form-grid">
+        <div>
+          <label for="customerId">Customer ID</label>
+          <input id="customerId" formControlName="customerId" placeholder="e.g., 123">
+        </div>
+        <div>
+          <label for="emailId">Email</label>
+          <input id="emailId" type="email" formControlName="emailId" placeholder="e.g., name@example.com">
+        </div>
+        <div>
+          <label for="phoneNo">Phone Number</label>
+          <input id="phoneNo" formControlName="phoneNo" placeholder="e.g., 123-456-7890">
+        </div>
+      </div>
+      <div class="actions">
+        <button type="submit" [disabled]="customerSearchForm.invalid || searchingCustomer">
+          {{ searchingCustomer ? 'Searching...' : 'Search Customers' }}
+        </button>
+        <button type="button" class="secondary" (click)="onCustomerClear()">Clear</button>
+      </div>
+    </form>
+    <div *ngIf="customerSearchAttempted">
+      <app-search-results [customers$]="customerResults$" [error]="customerError"></app-search-results>
+    </div>
+  </div>
+
+  <!-- Card Search Section -->
+  <div id="card-search" class="search-section">
+    <h3>By Card Number</h3>
+    <form [formGroup]="cardSearchForm" (ngSubmit)="onCardSearch()">
+      <div class="form-group">
+        <label for="cardNumber">Card Number</label>
+        <input id="cardNumber" formControlName="cardNumber" placeholder="e.g., 4242-xxxx-xxxx-xxxx">
+      </div>
+      <div class="actions">
+        <button type="submit" [disabled]="cardSearchForm.invalid || searchingCard">
+          {{ searchingCard ? 'Searching...' : 'Search by Card' }}
+        </button>
+        <button type="button" class="secondary" (click)="onCardClear()">Clear</button>
+      </div>
+    </form>
+    <div *ngIf="cardSearchAttempted">
+      <app-search-results [customers$]="cardResults$" [error]="cardError"></app-search-results>
+    </div>
+  </div>
+
+  <!-- Loan Search Section -->
+  <div id="loan-search" class="search-section">
+    <h3>By Loan Account</h3>
+    <form [formGroup]="loanSearchForm" (ngSubmit)="onLoanSearch()">
+      <div class="form-group">
+        <label for="loanAccountNumber">Loan Account Number</label>
+        <input id="loanAccountNumber" formControlName="loanAccountNumber" placeholder="e.g., LN-1001">
+      </div>
+      <div class="actions">
+        <button type="submit" [disabled]="loanSearchForm.invalid || searchingLoan">
+          {{ searchingLoan ? 'Searching...' : 'Search by Loan' }}
+        </button>
+        <button type="button" class="secondary" (click)="onLoanClear()">Clear</button>
+      </div>
+    </form>
+    <div *ngIf="loanSearchAttempted">
+      <app-search-results [customers$]="loanResults$" [error]="loanError"></app-search-results>
+    </div>
+  </div>
+</div>

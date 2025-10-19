@@ -1,0 +1,18 @@
+.results-header {
+  margin-top: 2rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.info-message {
+  text-align: center;
+  margin-top: 2rem;
+  color: #666;
+}
+
+.table-container {
+  margin-top: 1rem;
+}
+
+/* Reusing styles from customer-form.css for table and buttons */
+@import './customer-form.component.css';
